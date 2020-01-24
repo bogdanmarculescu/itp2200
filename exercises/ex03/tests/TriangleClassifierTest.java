@@ -29,10 +29,31 @@ public class TriangleClassifierTest {
         assertFalse(result.equalsIgnoreCase("SCALENE"));
     }
 
-    //Is this enough?
     @Test
-    public void testClassify_v2() throws Exception{
-        TriangleType result = TriangleClassifier.classify_v2(4, 5, 6);
-        assertTrue(result == TriangleType.SCALENE);
+    public void testWithAZero() throws Exception{
+        int a = 0;
+        int b = 5;
+        int c = 5;
+
+        String result = TriangleClassifier.classify(a, b, c);
+        assertTrue(result.equalsIgnoreCase("NOT_A_TRIANGLE"));
+    }
+
+    @Test
+    public void testCantMakeATriangleWithThat() throws Exception{
+        int a = 100;
+        int b = 1 ;
+        int c = 5;
+
+        String result = TriangleClassifier.classify(a, b, c);
+        assertTrue(result.equalsIgnoreCase("NOT_A_TRIANGLE"));
+
+    }
+
+    @Test
+    public void testEquilateral() throws Exception{
+        int a = 42;
+        String result = TriangleClassifier.classify(a, a, a);
+        assertTrue(result.equalsIgnoreCase("EQUILATERAL"));
     }
 }

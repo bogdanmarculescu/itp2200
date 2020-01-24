@@ -1,6 +1,6 @@
 package ex03;
 
-// Code example from Ammann and Offutt
+// Code example from Introduction to Software Testing, Ammann and Offutt
 
 public class Stats {
     public static void computeStats (int [ ] numbers)
