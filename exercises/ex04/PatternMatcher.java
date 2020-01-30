@@ -1,4 +1,4 @@
-package ex03;
+package ex04;
 
 // Code example from Introduction to Software Testing, Ammann and Offutt
 
