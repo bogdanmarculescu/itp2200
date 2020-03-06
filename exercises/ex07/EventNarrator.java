@@ -9,7 +9,7 @@ package ex07;
  */
 public class EventNarrator {
 
-    public static void main(String[] args){
+    public void accessPoint(){
         // this simulates where our code will be used
         //Event mid1 = new Event("Midway");
         //Event mid2 = new Event("Midway", new Date(1942, 06, 04));
@@ -25,6 +25,13 @@ public class EventNarrator {
         // TODO 2. Print the duration of an event (print "This event took [x] years/months/days") IF the event took more than a day
 
         // TODO 3. Print the time that passed between the current event and the previous event ( e.g. "It was [x] years/months/days later that [y] happened") IF the previous event happened before.
+    }
+
+
+
+    public String elapsedTime(Event e){
+        String s = "This many years since " + e.getName() + " : " + e.getStartDate().yearsSince();
+        return s;
     }
 
 
