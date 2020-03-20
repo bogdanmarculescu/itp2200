@@ -15,6 +15,7 @@ public class Date {
     public Date(int year, int month, int day){
             this.date = LocalDate.of(year, month, day);
         }
+    public Date(LocalDate inputDate) { this.date = inputDate;}
 
 
     /**

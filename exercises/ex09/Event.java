@@ -26,6 +26,7 @@ public abstract class Event {
     }
 
     public void setEndDate(Date endDate) {
+        // check that endDate does not precede startDate!
         this.endDate = endDate;
     }
 }
