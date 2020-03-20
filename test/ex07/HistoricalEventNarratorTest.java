@@ -3,7 +3,7 @@ package ex07;
 import org.junit.Test;
 import static org.junit.Assert.assertTrue;
 
-public class EventNarratorTest {
+public class HistoricalEventNarratorTest {
     @Test
     public void testElapsedTime(){
         // This tests the elapsed time method.

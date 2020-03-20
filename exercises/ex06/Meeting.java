@@ -6,11 +6,23 @@ public class Meeting {
     Time time;
     int duration;
 
-    private Meeting(Person p, Date d, Time t){
+    public Meeting() {
+    }
+
+    public Meeting(Person p, Date d, Time t){
         this.owner = p;
         this.date = d;
         this.time = t;
     }
+
+    public void setDate(int year, int month, int day){
+        this.date = new Date(year, month, day);
+    }
+
+    public void setTime(int hour, int minute){
+        this.time = new Time(hour, minute, 0);
+    }
+
 }
 
 

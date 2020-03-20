@@ -1,4 +1,4 @@
-package ex08;
+package ex09;
 
 import org.junit.Before;
 import org.junit.Test;
@@ -14,23 +14,24 @@ public class EventNarratorTest {
 
         // Tests should not depend on each other (so one test cannot be used to setup the system for the following one
         // But the @Before marked methods are executed every time, before the actual test -
-         events = sillyInit(); // later we may want a more sensible init.
+        events = sillyInit(); // later we may want a more sensible init.
          en = new EventNarrator();
     }
 
     private Event[] sillyInit(){
-        return new Event[]{new Event("Midway", new Date(1942, 6, 4)), // - a couple of tests for years
-                new Event("Death of Caligula", new Date(41, 1, 24)),
-                new Event("Reign of Aurelian", new Date(270, 9, 1), new Date(275, 9, 25)),
-                new Event("New Year's Party", new Date(2020, 1, 1)), // month test
-                new Event("Online lecture due to Corona", new Date(2020, 03, 13)), // - test for days?
+        return new Event[]{new HistoricalEvent("Midway", new Date(1942, 6, 4)), // - a couple of tests for years
+                new HistoricalEvent("Death of Caligula", new Date(41, 1, 24)),
+                new HistoricalEvent("Reign of Aurelian", new Date(270, 9, 1), new Date(275, 9, 25)),
+                new HistoricalEvent("New Year's Party", new Date(2020, 1, 1)), // month test
+                new HistoricalEvent("Online lecture due to Corona", new Date(2020, 3, 13)), // - test for days?
+                new PlannedEvent("Summer holidays", new Date(2020, 6, 22), new Date(2020, 8, 31))
         };
     }
 
     @Test
     public void testElapsedTime(){
         // This tests the elapsed time method.
-        Event e1 = new Event("Death of Caligula", new Date(41, 01, 24));
+        Event e1 = new HistoricalEvent("Death of Caligula", new Date(41, 1, 24));
         EventNarrator en = new EventNarrator();
 
         String res = en.elapsedTime(e1);
@@ -96,5 +97,14 @@ public class EventNarratorTest {
         assertFalse(dys0.contains("days"));
         assertFalse(dys2.contains("days"));
         assertTrue(dys3.contains("days"));
+    }
+
+    @Test
+    public void endedTest(){
+        for(int i = 0; i < events.length; i++){
+            if( events[i] instanceof HistoricalEvent) {
+                assertTrue(events[i].getEndDate().ended());
+            }
+        }
     }
 }

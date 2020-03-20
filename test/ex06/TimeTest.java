@@ -13,5 +13,11 @@ public class TimeTest {
         assertTrue(t.seconds == 2);
     }
 
+    @Test
+    public void constructorTest(){
+        Time t = new Time(3612);
+        assertTrue(t.seconds == 12);
+        assertTrue(t.hours == 1);
+    }
 
 }

@@ -3,7 +3,7 @@ package ex07;
 import org.junit.Test;
 import static org.junit.Assert.assertTrue;
 
-public class EventTest {
+public class HistoricalEventTest {
 
     @Test
     public void constructorNameTest(){

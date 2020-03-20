@@ -23,7 +23,7 @@ public class OraclesTest {
 
     @Test
     public void testSinus(){
-        double[] inputs = {0, 12, 15, 145};
+        double[] inputs = {42};
 
         System.out.println("Testing Sinus:");
 
@@ -43,6 +43,11 @@ public class OraclesTest {
         Arrays.sort(inputs);
         Oracles.printArray(result);
 
+        for (int i = 0; i < result.length - 1; i++){
+            //if(result[i] <= result[i+1]){ }
+            assertTrue(result[i] <= result[i+1]);
+        }
+
     }
 
     @Test
@@ -52,6 +57,8 @@ public class OraclesTest {
         for (int i = 0; i < inputs.length; i++){
             double result = Oracles.exp(inputs[i]);
 
+            //assertTrue(result * Oracles.exp(-inputs[i]) == 1);
+            System.out.println(result * Oracles.exp(-inputs[i]));
         }
     }
 

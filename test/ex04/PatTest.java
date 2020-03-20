@@ -1,13 +1,12 @@
 package ex04;
 
-import ex04.PatternMatcher;
 import org.junit.Test;
 
 import static org.junit.Assert.*;
 
 public class PatTest {
     @Test
-    public void test1() throws Exception{
+    public void test1(){
         char[] subject = "let us run some tests".toCharArray();
         char[] pattern = "tests".toCharArray();
 
