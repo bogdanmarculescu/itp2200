@@ -116,7 +116,31 @@ public class EventNarratorTest {
 
     }
 
+    @Test
+    public void testElapsed_months(){
+        Date testDate = new Date();
+        Date testDateM = new Date(testDate.date.minusDays(70));
 
+        Event testEvent = new HistoricalEvent("Month Test", testDateM);
+        String elapsed = en.elapsedTimeSince(testEvent);
+        // oracle string for a date 30 days ago.
+        String oracle =  "It was " + 2 + " months ago that " + testEvent.getName() + " happened.";
+
+        assertTrue(elapsed.contentEquals(oracle));
+    }
+
+    @Test
+    public void testElapsed_years(){
+        Date testDate = new Date();
+        Date testDateM = new Date(testDate.date.minusDays(800));
+
+        Event testEvent = new HistoricalEvent("Year Test", testDateM);
+        String elapsed = en.elapsedTimeSince(testEvent);
+        // oracle string for a date 30 days ago.
+        String oracle =  "It was " + 2 + " years ago that " + testEvent.getName() + " happened.";
+
+        assertTrue(elapsed.contentEquals(oracle));
+    }
 
 
 
