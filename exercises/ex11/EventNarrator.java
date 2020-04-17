@@ -59,14 +59,15 @@ public class EventNarrator {
             timeScale = "years";
             difference = Date.yearDiff(writingTime, e.getEndDate());
         }
-        else if(Date.monthDiff(writingTime, e.getEndDate()) != 0){
-            timeScale = "months";
-            difference = Date.monthDiff(writingTime, e.getEndDate());
-        }
-        else {
-            timeScale = "days";
-            difference = Date.dayDiff(writingTime, e.getEndDate());
-        }
+        else
+            if(Date.monthDiff(writingTime, e.getEndDate()) != 0){
+                timeScale = "months";
+                difference = Date.monthDiff(writingTime, e.getEndDate());
+            }
+            else {
+                timeScale = "days";
+                difference = Date.dayDiff(writingTime, e.getEndDate());
+            }
         return "It was " + difference + " " + timeScale + " ago that " + e.getName() + " happened.";
     }
 }
