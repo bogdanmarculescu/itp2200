@@ -5,12 +5,12 @@ import org.junit.Test;
 public class VerySimpleCodeTest {
 
     @Test
-    public void testPrintNumber() {
+    public void testPrintNumberFullCoverage() {
         VerySimpleCode.printNumber(10);
     }
 
     @Test
-    public void testPrintNumberFullCoverage() {
+    public void testPrintNumber() {
         VerySimpleCode.printNumber(0);
     }
 }
