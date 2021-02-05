@@ -12,4 +12,51 @@ public class StatsTest {
         assertTrue(true);
         assertFalse(false);
     }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    @Test
+    public void testEmptyArray() throws Exception{
+        // Your test code here!
+        int[] a = {};
+        Stats.computeStats(a);
+        assertTrue(true);
+        assertFalse(false);
+    }
+
+    @Test
+    public void testOneElementArray() throws Exception{
+        // Your test code here!
+        int[] a = {1};
+        Stats.computeStats(a);
+        assertTrue(true);
+        assertFalse(false);
+    }
 }
