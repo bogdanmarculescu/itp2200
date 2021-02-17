@@ -39,7 +39,7 @@ public class DateTest {
             Date d1 = new Date(2020, 02, 31);
         }
         catch(DateTimeException e){
-            assertTrue(e != null && d0.date.getYear() == 2020);
+            assertTrue(e != null && d0.date.getYear() == 2021);
         }
         //Date d2 = new Date(2020, 13, 21);
         //Date d3 = new Date(2020, 01, 32);
